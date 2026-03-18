@@ -22,6 +22,6 @@ class Login{
             $result["status"] = "error";
             $result["message"] = "User not logged in";
         }
-        return $result;
+        return json_encode($result);
     }
 }
