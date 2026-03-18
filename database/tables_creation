@@ -1,0 +1,12 @@
+<?php
+
+$pdo = new PDO("mysql:host=" . $_SERVER["HTTP_HOST"] . ";dbname=shopmmerce");
+
+$query = "
+CREATE TABLE IF NOT EXISTS users(
+id INT(225) NOT NULL AUTO_INCREMENT PRIMARY KEY
+)";
+
+$stmt = $pdo->prepare($query);
+$stmt->execute();
+echo "Tables successfully created";
