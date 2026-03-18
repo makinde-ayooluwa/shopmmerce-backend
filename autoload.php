@@ -1,4 +1,8 @@
 <?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Method: *");
+header("Content-type: application/json");
     spl_autoload_register("autoload");
 function autoload($class_name)
 {

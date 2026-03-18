@@ -4,7 +4,9 @@ $pdo = new PDO("mysql:host=" . $_SERVER["HTTP_HOST"] . ";dbname=shopmmerce");
 
 $query = "
 CREATE TABLE IF NOT EXISTS users(
-id INT(225) NOT NULL AUTO_INCREMENT PRIMARY KEY
+id INT(225) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+email VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL
 )";
 
 $stmt = $pdo->prepare($query);
