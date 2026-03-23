@@ -6,7 +6,7 @@ class Login{
     {
         $this->pdo = new PDO("mysql:host=" . $_SERVER["HTTP_HOST"] . ";dbname=shopmmerce");
     }
-    public function run($data){
+    public function validate($data){
         $result = [
             "status" => "",
             "message" => ""
@@ -20,7 +20,7 @@ class Login{
             $result["message"] = "User successfully logged in";
         }else{
             $result["status"] = "error";
-            $result["message"] = "User not logged in";
+            $result["message"] = "User does not exist";
         }
         return json_encode($result);
     }

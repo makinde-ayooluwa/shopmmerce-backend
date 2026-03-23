@@ -6,7 +6,7 @@ header("Content-type: application/json");
     spl_autoload_register("autoload");
 function autoload($class_name)
 {
-    $paths = ["model/"];
+    $paths = ["classes/"];
     $extention = ".class.php";
     foreach ($paths as $path) {
         $fullpath = $path . $class_name . $extention;
