@@ -5,3 +5,4 @@ $pdo = new PDO(
     getenv('DB_USER'),
     getenv('DB_PASS')
 );
+// $pdo = new PDO("mysql:host=localhost;dbname=shopmmerce","root","");
