@@ -1,17 +1,14 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
 
-# Install MySQL extension
+# Copy project files
+COPY . /app
+WORKDIR /app
+
+# Install PDO MySQL extension
 RUN docker-php-ext-install pdo pdo_mysql
 
-# Copy app
-COPY . /var/www/html/
+# Expose Railway port
+EXPOSE 8080
 
-# Set working dir
-WORKDIR /var/www/html/
-
-# Enable rewrite for routing
-RUN a2enmod rewrite
-
-EXPOSE 80
-
-# Railway automatically routes HTTP traffic to port 80
+# Start PHP built-in server on Railway $PORT
+CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-8080} -t ."]
