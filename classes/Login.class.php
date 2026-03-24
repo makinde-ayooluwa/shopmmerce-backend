@@ -1,10 +1,9 @@
 <?php
-
 class Login{
     private $pdo;
-    public function __construct()
+    public function __construct($pdo)
     {
-        $this->pdo = new PDO("mysql:host=" . $_SERVER["HTTP_HOST"] . ";dbname=shopmmerce");
+        $this->pdo = $pdo;
     }
     public function validate($data){
         $result = [

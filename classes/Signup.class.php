@@ -2,9 +2,9 @@
 
 class Signup{
     private $pdo;
-    public function __construct()
+    public function __construct($pdo)
     {
-        $this->pdo = new PDO("mysql:host=" . $_SERVER["HTTP_HOST"] . ";dbname=shopmmerce");
+        $this->pdo = $pdo;
     }
 
     private function userExist($data){
