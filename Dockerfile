@@ -1,9 +1,21 @@
+# Use official PHP Apache image
 FROM php:8.2-apache
 
-RUN docker-php-ext-install pdo pdo_mysql
+# Set working directory
+WORKDIR /var/www/html
 
-COPY . /var/www/html/
+# Copy project files
+COPY . .
 
-RUN a2enmod rewrite
+# Enable Apache modules
+# Only enable one MPM: prefork for mod_php
+RUN a2dismod mpm_event mpm_worker \
+    && a2enmod mpm_prefork \
+    && a2enmod rewrite \
+    && docker-php-ext-install pdo pdo_mysql
 
+# Expose port
 EXPOSE 80
+
+# Start Apache in foreground
+CMD ["apache2-foreground"]
