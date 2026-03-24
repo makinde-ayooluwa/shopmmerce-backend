@@ -1,10 +1,10 @@
 FROM php:8.2-cli
 
-# Copy project files into /app inside the container
-COPY . /app
+# Copy project files into /api inside the container
+COPY . /api
 
-# Set working directory to /app
-WORKDIR /app
+# Set working directory to /api
+WORKDIR /api
 
 # Install PDO MySQL extension
 RUN docker-php-ext-install pdo pdo_mysql
