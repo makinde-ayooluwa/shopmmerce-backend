@@ -1,7 +1,7 @@
 <?php
 header("Access-Control-Allow-Origin: https://shopmmerce-backend-production.up.railway.app");
 header("Access-Control-Allow-Headers: *");
-header("Access-Control-Allow-Method: *");
+header("Access-Control-Allow-Methods: *");
 header("Content-type: application/json");
     spl_autoload_register("autoload");
     include "./db.php";
