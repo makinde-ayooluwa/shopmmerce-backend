@@ -1,5 +1,5 @@
 <?php
-include "autoload.php";
+include "./autoload.php";
 $data = json_decode(file_get_contents("php://input"), true);
 $login = new Signup($pdo);
 echo $login->run($data);
