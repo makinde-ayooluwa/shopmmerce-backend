@@ -1,3 +1,7 @@
 <?php
 
-$pdo = new PDO("mysql:host=mysql.railway.internal;dbname=railway", "root", "fdVRrbqgsMCubwAjEUNmQvFmAGhQFCAu");
+$pdo = new PDO(
+    "mysql:host=" . getenv('DB_HOST') . ";dbname=" . getenv('DB_NAME'),
+    getenv('DB_USER'),
+    getenv('DB_PASS')
+);
