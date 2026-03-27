@@ -4,7 +4,7 @@ $user = getenv('MYSQLUSER');
 $pass = getenv('MYSQLPASSWORD');
 $db   = getenv('MYSQLDATABASE');
 $port = getenv('MYSQLPORT');
-
+$pdo;
 try {
     $pdo = new PDO(
         "mysql:host=$host;port=$port;dbname=$db;charset=utf8",
